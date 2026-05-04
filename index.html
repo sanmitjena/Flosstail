@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlossTail — Someone Got An Upgrade</title>
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="toast-message" id="toast">🎉 Message sent! We'll reply within 24 hours.</div>
+
+<!-- ══ NAVBAR ══════════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand nav-logo" href="#" onclick="showPage('home')">Floss<em>Tail</em></a>
+    
+    <!-- Hamburger Button for Mobile -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center nav-menu">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" id="nav-home" onclick="showPage('home',event)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="nav-about" onclick="showPage('about',event)">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="nav-contact" onclick="showPage('contact',event)">Contact</a>
+        </li>
+        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+          <button class="nav-cta w-100" onclick="showPage('contact',null);setTimeout(()=>document.querySelector('.contact-form input').focus(),400)">Order Now 🍭</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HOME PAGE ════════════════════════════════════ -->
+<div class="page active" id="home">
+
+  <div class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="particles" id="particles"></div>
+    <div class="container position-relative z-2">
+      <div class="row align-items-center">
+        <!-- Hero Text -->
+        <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+          <div class="hero-badge">🎉 Someone Got An Upgrade</div>
+          <h1 class="hero-title">Cotton Candy<br><em>Meets</em> Mocktail</h1>
+          <p class="hero-sub mx-auto mx-lg-0">FlossTail is a nitrogen-sealed cotton candy pouch that transforms into a fresh, fizzy mocktail in 30 seconds — anytime, anywhere.</p>
+          <div class="hero-btns justify-content-center justify-content-lg-start">
+            <button class="btn-dark" onclick="document.querySelector('#home .how-sec').scrollIntoView({behavior:'smooth'})">See How It Works →</button>
+            <button class="btn-ghost" onclick="showPage('about',null)">About Us</button>
+          </div>
+        </div>
+        <!-- Hero Image (Product Mockup) -->
+        <div class="col-lg-6 text-center">
+          <div class="hero-visual">
+            <img src="images/product-mockup.png" alt="FlossTail Premium Pouch Mockup" class="img-fluid product-mockup-img shadow-lg">
+            <div class="pouch-label mt-3">Drop · Dissolve · Celebrate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-sec">
+    <div class="container text-center">
+      <div class="sec-label reveal">The Magic</div>
+      <h2 class="sec-title reveal rd1">From pouch to party<br>in 30 seconds</h2>
+      <p class="sec-sub reveal rd2 mx-auto">No blender, no electricity, no fuss. Tear, drop, pour — and celebrate.</p>
+      
+      <div class="row mt-5 position-relative steps-row">
+        <div class="col-md-3 step reveal">
+          <div class="step-num">1</div><div class="step-ico">✂️</div><h4>Tear the Pouch</h4><p>Open the nitrogen-sealed pouch. The cotton candy floss stays perfectly fresh inside.</p>
+        </div>
+        <div class="col-md-3 step reveal rd1">
+          <div class="step-num">2</div><div class="step-ico">🥤</div><h4>Drop the Floss</h4><p>Place the cotton candy floss gently into a glass or cup of your choice.</p>
+        </div>
+        <div class="col-md-3 step reveal rd2">
+          <div class="step-num">3</div><div class="step-ico">💧</div><h4>Pour Water or Soda</h4><p>Add water or your favourite soda over the floss. Watch the magic begin.</p>
+        </div>
+        <div class="col-md-3 step reveal rd3">
+          <div class="step-num">4</div><div class="step-ico">🎉</div><h4>Celebrate!</h4><p>In 30 seconds the floss dissolves into a fresh, flavourful mocktail. Cheers!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLAVORS SECTION (NEW) -->
+  <section class="flavors-sec">
+    <div class="container">
+      <div class="text-center">
+        <div class="sec-label reveal">Our Collection</div>
+        <h2 class="sec-title reveal rd1">Flavors that pop</h2>
+        <p class="sec-sub reveal rd2 mx-auto mb-5">Experience a burst of joy with our signature blends, crafted for every mood.</p>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 col-sm-6 reveal">
+          <div class="flavor-card">
+            <div class="flavor-bg" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+              <span class="flavor-emoji">🍓</span>
+            </div>
+            <h4>Berry Blast</h4>
+            <p>A sweet and tangy explosion of wild strawberries and raspberries.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 reveal rd1">
+          <div class="flavor-card">
+            <div class="flavor-bg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+              <span class="flavor-emoji">🍇</span>
+            </div>
+            <h4>Grape Galaxy</h4>
+            <p>Deep, rich concord grape flavor with a refreshing fizzy finish.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 reveal rd2">
+          <div class="flavor-card">
+            <div class="flavor-bg" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+              <span class="flavor-emoji">🍋</span>
+            </div>
+            <h4>Citrus Splash</h4>
+            <p>Zesty lemon-lime infused with a hint of mint for ultimate refreshment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION (NEW) -->
+  <section class="pricing-sec bg-light">
+    <div class="container">
+      <div class="text-center">
+        <div class="sec-label reveal">Affordable Magic</div>
+        <h2 class="sec-title reveal rd1">Choose Your Celebration</h2>
+        <p class="sec-sub reveal rd2 mx-auto mb-5">Premium mocktails without the premium price tag. Starting at just ₹40 per pouch.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center align-items-center">
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="pricing-card">
+            <div class="badge-tag">Popular Starter</div>
+            <h3>Single Pouch</h3>
+            <div class="price"><span>₹</span>40</div>
+            <ul class="pricing-features">
+              <li>1x Nitrogen-sealed pouch</li>
+              <li>Choice of any 1 flavor</li>
+              <li>6-month shelf life</li>
+              <li>Perfect for trying out</li>
+            </ul>
+            <button class="btn-ghost w-100" onclick="showPage('contact',null)">Order Now</button>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 reveal rd1">
+          <div class="pricing-card featured">
+            <div class="badge-tag highlight">Best Value</div>
+            <h3>Party Pack</h3>
+            <div class="price"><span>₹</span>350</div>
+            <p class="price-sub text-white-50">₹35 per pouch</p>
+            <ul class="pricing-features">
+              <li>10x Nitrogen-sealed pouches</li>
+              <li>Assorted flavor mix</li>
+              <li>Free standard shipping</li>
+              <li>Perfect for small gatherings</li>
+            </ul>
+            <button class="btn-dark w-100 bg-white text-dark" onclick="showPage('contact',null)">Order Party Pack</button>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 reveal rd2">
+          <div class="pricing-card">
+            <div class="badge-tag">For Events</div>
+            <h3>Bulk Order</h3>
+            <div class="price"><span>₹</span>1600</div>
+            <p class="price-sub text-muted">₹32 per pouch</p>
+            <ul class="pricing-features">
+              <li>50x Nitrogen-sealed pouches</li>
+              <li>Customizable flavor mix</li>
+              <li>Priority free shipping</li>
+              <li>Perfect for weddings & corporate</li>
+            </ul>
+            <button class="btn-ghost w-100" onclick="showPage('contact',null)">Contact Sales</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION (NEW) -->
+  <section class="testimonials-sec">
+    <div class="container text-center">
+      <div class="sec-label reveal">What They Say</div>
+      <h2 class="sec-title reveal rd1">Real Smiles, Real Reviews</h2>
+      
+      <div id="testimonialCarousel" class="carousel slide mt-5 reveal rd2" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="testimonial-card mx-auto">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Absolutely mind-blowing! I took a pack to a picnic and everyone was amazed at how quickly it turned into a delicious mocktail. The Berry Blast is my favorite!"</p>
+              <h5 class="author">- Priya S., Traveler</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"We used FlossTail for our office Friday unwinds. It's so much more fun and affordable than ordering expensive drinks. Plus, no mess at all."</p>
+              <h5 class="author">- Rahul M., HR Manager</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="testimonial-card mx-auto">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Kids love it, adults love it. The fact that I don't need to refrigerate these makes it the perfect backup for unexpected guests."</p>
+              <h5 class="author">- Ananya K., Parent</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <div class="home-cta-strip">
+    <h2 class="sec-title">"FlossTail turns any moment<br>into a celebration."</h2>
+    <p>Ready to bring instant joy to your next moment? Learn more about us or get in touch today.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn-dark" onclick="showPage('about',null)">Our Story →</button>
+      <button class="nav-cta" style="font-size:1rem;padding:14px 32px;margin-left:0;" onclick="showPage('contact',null)">Contact Us 🍭</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ ABOUT US PAGE ════════════════════════════════ -->
+<div class="page" id="about">
+  <div class="about-hero">
+    <div class="sec-label">About Us</div>
+    <h2 class="sec-title" style="max-width:700px;margin:0 auto 16px;">The Story Behind<br><em>FlossTail</em></h2>
+    <p class="sec-sub">Born from a simple question: why can't celebrating feel as light, fun, and instant as cotton candy?</p>
+  </div>
+  
+  <section class="story-sec">
+    <div class="container">
+        <div class="sec-label reveal">Our Story</div>
+        <h2 class="sec-title reveal rd1">Instant joy,<br>engineered for everyone</h2>
+        <div class="row align-items-center mt-5 gap-5 gap-lg-0">
+          <div class="col-lg-6">
+            <p style="font-size:1.02rem;color:var(--muted);line-height:1.8;margin-bottom:20px;" class="reveal rd1">FlossTail started as an MBA entrepreneurship project at <strong>Srusti Academy of Management &amp; Technology</strong>, Bhubaneswar — but the idea behind it is universal.</p>
+            <p style="font-size:1.02rem;color:var(--muted);line-height:1.8;margin-bottom:20px;" class="reveal rd2">We noticed that people constantly crave a fun, celebratory drink — but existing options were either too expensive, too bulky, or not portable. Premium mocktails were trapped behind café counters. Cotton candy melted in minutes.</p>
+            <p style="font-size:1.02rem;color:var(--muted);line-height:1.8;" class="reveal rd3">So we invented <strong>FlossTail</strong> — a nitrogen-sealed cotton candy pouch that transforms into a fresh mocktail in 30 seconds. No refrigeration. No power. No fuss. Just celebration — wherever you are.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="story-visual reveal rd2">
+                <span class="big-emoji">🍭</span>
+                <p>"Turning any moment into a celebration — anywhere, anytime."</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  
+  <div class="conclusion-strip">
+    <h2 class="sec-title">Why FlossTail<br>Should Be Your Choice</h2>
+    <div class="why-grid">
+      <div class="why-chip">✅ Solves a real everyday problem</div>
+      <div class="why-chip">🎨 Unique, fun and memorable</div>
+      <div class="why-chip">💰 Affordable and scalable</div>
+      <div class="why-chip">🌿 Eco-friendly packaging</div>
+    </div>
+    <p class="tagline mt-4">"FlossTail turns any moment into a<br>celebration — anywhere, anytime."</p>
+    <button class="nav-cta" style="font-size:1rem;padding:16px 40px;" onclick="showPage('contact',null)">Get In Touch 🍭</button>
+  </div>
+</div>
+
+<!-- ══ CONTACT PAGE ══════════════════════════════════ -->
+<div class="page" id="contact">
+  <div class="contact-hero">
+    <div class="sec-label" style="color:rgba(255,255,255,.8);">Get In Touch</div>
+    <h2 class="sec-title" style="max-width:600px;margin:0 auto 14px;">We'd Love To Hear<br>From You 🎉</h2>
+    <p class="sec-sub">Whether you want to order, partner with us, or just say hi — drop us a message.</p>
+  </div>
+
+  <div class="contact-main">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="info-cards">
+            <div class="info-card reveal"><div class="info-ico">📍</div><div><h4>Our Location</h4><p>Srusti Academy of Management &amp; Technology<br>Bhubaneswar, Odisha</p></div></div>
+            <div class="info-card reveal rd1"><div class="info-ico">📧</div><div><h4>Email Us</h4><p>hello@flosstail.in</p></div></div>
+            <div class="info-card reveal rd2"><div class="info-ico">📞</div><div><h4>Call Us</h4><p>+91 98765 43210</p></div></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form reveal rd1">
+            <h3>Send Us a Message</h3>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6 form-group"><label>First Name</label><input type="text" class="form-control" placeholder="Priya"></div>
+              <div class="col-md-6 form-group"><label>Last Name</label><input type="text" class="form-control" placeholder="Sharma"></div>
+            </div>
+            <div class="form-group mb-3"><label>Email Address</label><input type="email" class="form-control" placeholder="priya@example.com"></div>
+            <div class="form-group mb-3">
+              <label>Inquiry Type</label>
+              <select class="form-select"><option value="">Select a topic...</option><option>General Inquiry</option><option>Place an Order</option></select>
+            </div>
+            <div class="form-group mb-4"><label>Message</label><textarea class="form-control" rows="4" placeholder="Tell us how we can help you celebrate..."></textarea></div>
+            <button class="submit-btn" onclick="handleSubmit()">Send Message 🍭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">FlossTail</div>
+  <div class="footer-tagline">Cotton Candy × Mocktail × Innovation</div>
+  <div class="footer-nav">
+    <button onclick="showPage('home',null)">Home</button>
+    <button onclick="showPage('about',null)">About Us</button>
+    <button onclick="showPage('contact',null)">Contact</button>
+  </div>
+  <div class="footer-copy">© 2026 FlossTail &nbsp;·&nbsp; Srusti Academy of Management &amp; Technology</div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/script.js"></script>
+</body>
+</html>
